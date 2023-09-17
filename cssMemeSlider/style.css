@@ -94,7 +94,7 @@ h6 {
 .wrapper {
    min-height: 100vh;
    display: grid;
-   grid-template: minmax(100px, auto) 1fr minmax(100px, auto)/1fr;
+   grid-template: minmax(6.25rem, auto) 1fr minmax(6.25rem, auto)/1fr;
    grid-template-areas: "header" "main" "footer";
    overflow-x: hidden;
 }
@@ -172,15 +172,16 @@ input {
 .slider__imgs {
    width: 100%;
    height: 35rem;
+   border-radius: 2rem;
+   border: 1rem gray solid;
    overflow: hidden;
+
 }
 
 .slider__img {
    width: 100%;
    height: 100%;
-   border-radius: 2rem;
-   border: 1rem gray solid;
-
+   transition: margin-top 0.7s cubic-bezier(0, 1.18, .87, .32);
 }
 
 .img1 {
@@ -228,6 +229,7 @@ input {
 .slider__text {
    font-size: 1.5rem;
    height: 6rem;
+   transition: margin-top 0.7s cubic-bezier(0, 1.18, .87, .32);
 }
 
 .slider__items {
@@ -280,12 +282,34 @@ span:hover {
    border: 0.15rem solid gray;
 }
 
+#r1:checked~.slider__imgs .img1 {
+   margin-top: 0
+}
+
+
+#r1:checked~.slider__column .slider__content .text1 {
+   margin-top: 0;
+   color: #3B5B66;
+}
+
 #r2:checked~.slider__column .slider__items #l2 .radio2 {
    background: #FFEE01;
 }
 
 #r2:checked~.slider__column .slider__items #l2 {
    border: 0.15rem solid gray;
+}
+
+#r2:checked~.slider__column .slider__content .text1 {
+   margin-top: -6rem;
+}
+
+#r2:checked~.slider__column .slider__content .text2 {
+   color: #6F0F1D;
+}
+
+#r2:checked~.slider__imgs .img1 {
+   margin-top: -33rem;
 }
 
 #r3:checked~.slider__column .slider__items #l3 .radio3 {
@@ -296,12 +320,36 @@ span:hover {
    border: 0.15rem solid gray;
 }
 
+#r3:checked~.slider__imgs .img1 {
+   margin-top: -66rem;
+}
+
+#r3:checked~.slider__column .slider__content .text1 {
+   margin-top: -12rem;
+}
+
+#r3:checked~.slider__column .slider__content .text3 {
+   color: #0456C4;
+}
+
 #r4:checked~.slider__column .slider__items #l4 .radio4 {
    background: #FFEE01;
 }
 
 #r4:checked~.slider__column .slider__items #l4 {
    border: 0.15rem solid gray;
+}
+
+#r4:checked~.slider__imgs .img1 {
+   margin-top: -99rem;
+}
+
+#r4:checked~.slider__column .slider__content .text1 {
+   margin-top: -18rem;
+}
+
+#r4:checked~.slider__column .slider__content .text4 {
+   color: #524172;
 }
 
 #r5:checked~.slider__column .slider__items #l5 .radio5 {
@@ -312,7 +360,17 @@ span:hover {
    border: 0.15rem solid gray;
 }
 
+#r5:checked~.slider__imgs .img1 {
+   margin-top: -132rem;
+}
 
+#r5:checked~.slider__column .slider__content .text1 {
+   margin-top: -24rem;
+}
+
+#r5:checked~.slider__column .slider__content .text5 {
+   color: #0A6F3C;
+}
 
 /*FOOTER*/
 
@@ -356,7 +414,7 @@ span:hover {
       height: 30rem;
    }
 
-   .slider__img {
+   .slider__imgs {
       border: 1rem gray solid;
    }
 
@@ -370,6 +428,24 @@ span:hover {
       width: 1.2em;
       height: 1.2em;
    }
+
+   #r2:checked~.slider__imgs .img1 {
+      margin-top: -28rem;
+   }
+
+   #r3:checked~.slider__imgs .img1 {
+      margin-top: -56rem;
+   }
+
+   #r4:checked~.slider__imgs .img1 {
+      margin-top: -84rem;
+   }
+
+   #r5:checked~.slider__imgs .img1 {
+      margin-top: -112rem;
+
+   }
+
 }
 
 /*768x*/
@@ -389,7 +465,7 @@ span:hover {
       height: 25rem;
    }
 
-   .slider__img {
+   .slider__imgs {
       border: 0.7rem gray solid;
    }
 
@@ -400,7 +476,24 @@ span:hover {
 
    .slider__content {
       order: 2;
-      text-align: center;
+      /* text-align: center; */
+   }
+
+   #r2:checked~.slider__imgs .img1 {
+      margin-top: -23.65rem;
+   }
+
+   #r3:checked~.slider__imgs .img1 {
+      margin-top: -47.3rem;
+   }
+
+   #r4:checked~.slider__imgs .img1 {
+      margin-top: -70.95rem;
+   }
+
+   #r5:checked~.slider__imgs .img1 {
+      margin-top: -94.6rem;
+
    }
 
    .footer__link {
@@ -425,23 +518,31 @@ span:hover {
 
    .slider__imgs {
       height: 15rem;
-   }
-
-   .slider__img {
       border: 0.5rem gray solid;
    }
 
    .slider__text {
       font-size: 1.2rem;
-      height: 5rem;
-   }
-
-   .slider__content {
-
-      height: 4rem;
    }
 
 
+
+   #r2:checked~.slider__imgs .img1 {
+      margin-top: -14rem;
+   }
+
+   #r3:checked~.slider__imgs .img1 {
+      margin-top: -28rem;
+   }
+
+   #r4:checked~.slider__imgs .img1 {
+      margin-top: -42rem;
+   }
+
+   #r5:checked~.slider__imgs .img1 {
+      margin-top: -56rem;
+
+   }
 
    .footer__items {
       grid-auto-flow: row;
